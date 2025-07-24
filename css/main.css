@@ -56,3 +56,16 @@ thead {
 .btn-secondary:hover {
   background-color: #5a6268;
 }
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: block;
+  }
+  .navbar a {
+    float: none;
+    text-align: center;
+  }
+  body {
+    font-size: 1.1em;
+  }
+}
