@@ -69,3 +69,10 @@ thead {
     font-size: 1.1em;
   }
 }
+
+iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
