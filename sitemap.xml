@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!--  Homepage  -->
   <url>
-    <loc> </loc>
+    <loc>https://tropfsportslaw.github.io/index.html</loc>
   </url>
   <!-- About Us Page -->
   <url>
-    <loc> </loc>
+    <loc>https://tropfsportslaw.github.io/pages/about.html</loc>
   </url>
   <!-- Our Services Page -->
   <url>
-    <loc> </loc>
+    <loc>https://tropfsportslaw.github.io/pages/services.html</loc>
+  </url>
+  <!-- Our Prices Page -->
+  <url>
+    <loc>https://tropfsportslaw.github.io/pages/pricing.html</loc>
   </url>
   <!-- Contact Us Page -->
   <url>
-    <loc> </url>
+    <loc>https://tropfsportslaw.github.io/pages/contact.html</url>
   </url>
 </urlset>
