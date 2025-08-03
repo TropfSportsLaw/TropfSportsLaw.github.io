@@ -2,6 +2,15 @@
   <meta charset="UTF-8">
   <title>Tropf's Sports INC - sitemap</title>
   <meta name="google-site-verification" content="W-jmDrLbc3QpAlS_Sy-qeprsU8ecPq88vRTvJOywbUw"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XYREZEEQLF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XYREZEEQLF');
+</script>    
 </head>
 <?sml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
