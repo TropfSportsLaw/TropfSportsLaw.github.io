@@ -1,38 +1,74 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title> Mountain Bean Cafe - Page Title Here</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="W-jmDrLbc3QpAlS_Sy-qeprsU8ecPq88vRTvJOywbUw"/> X
-    <link rel="stylesheet" href="/css/main.css"> X
-  </head>
-  <body>
-    <hr>
-    <ul>
-      <li><a href="/index.html">Home</a></li> X
-      <li><a href="/pages/about.html">About Us</a></li> X
-      <li><a href="/pages/services.html">Our Services</a></li> X
-      <li><a href="/pages/contact.html">Contact Us</a></li> X
-    </ul>
-    <!-- This link is the 'emergancy exit'that takes users cack to safety (your homepage).-->
-
-      <!-- The<hr> tag creates a horizontal rule (a line), visually separating sections.-->
-    <hr>
-    <!-- ================================================================= -->
-    <!--              START: UNIQUE PAGE CONTENT                    -->
-    <!-- This is where the specific content for each new page -->
-    <!-- (like 'About Us' or 'Our Services') will go.       -->
-    <!-- ================================================================= -->
-    <h1>Welcome to the Mountain Beane Cafe</h1>
-    <p>Step inside and savor the aroma of freshly roasted beans, the gentle hum of conversation, and the cozy charm that makes our coffee shop a home away from home. At the Mountain Bean Cafe, every cup is brewed with care-whether it's your morning pick-me-up, an afternoon escape, or a moment to share with friends. Pair your drink with our handcrafted pastries, locally sourced ingredients, and a seat by the window where the world shlows down just enough to enjoy it.</p>
-    
-    <p>Come in, take a sip, and stay awhile-you belong here!</p>
-    <!-- ================================================================ -->
-    <!--              END: UNIQUE PAGE CONTENT                         -->
-    <!-- ================================================================ -->
-    <hr>
-      <!-- the footer provides consistency and a professional closing on every page. -->
-    <p>(c) 2025 Mountain Bean Cafe. All Rights Reserved.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mountain Bean Cafe</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f8f5f2;
+      color: #333;
+    }
+    .hero {
+      height: 100vh;
+      background: url('coffee-shop-hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero button {
+      background-color: #c49a6c;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .hero button:hover {
+      background-color: #a97f54;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Welcome to the Mountain Bean Cafe</h1>
+      <p>Step inside and savor the aroma of freshly roasted beans, the gentle hum of conversation, and the cozy charm that makes our coffee shop a home away from home. At the Mountain Bean Cafe, every cup is brewed with care-whether it's your morning pick-me-up, an afternoon escape, or a moment to share with friends. Pair your drink with our handcrafted pastries, locally sourced ingredients, and a seat by the window where the world shlows down just enough to enjoy it.</p>
+      
+      <p>Come in, take a sip, and stay awhile-you belong here!</p>
+      <button>View Our Menu</button>
+    </div>
+  </section>
+  <p>(c) 2025 Mountain Bean Cafe. All Rights Reserved.</p>
+</body>
 </html>
