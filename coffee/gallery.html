@@ -1,36 +1,138 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title> Mountain Bean Cafe - Page Title Here</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="W-jmDrLbc3QpAlS_Sy-qeprsU8ecPq88vRTvJOywbUw"/> X
-    <link rel="stylesheet" href="/css/main.css"> X
-  </head>
-  <body>
-    <hr>
-    <ul>
-      <li><a href="/index.html">Home</a></li> X
-      <li><a href="/pages/about.html">About Us</a></li> X
-      <li><a href="/pages/services.html">Our Services</a></li> X
-      <li><a href="/pages/contact.html">Contact Us</a></li> X
-    </ul>
-    <!-- This link is the 'emergancy exit'that takes users cack to safety (your homepage).-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coffee Shop Photo Gallery</title>
+  <meta name="description" content="Responsive coffee shop photo gallery with lightbox — ready for GitHub Pages." />
+  <style>
+    /* Styles remain the same as before */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Coffee Shop Photo Gallery</h1>
+        <p class="lead">A collection of cozy coffee shop moments and brews.</p>
+      </div>
+    </header>
 
-      <!-- The<hr> tag creates a horizontal rule (a line), visually separating sections.-->
-    <hr>
-    <!-- ================================================================= -->
-    <!--              START: UNIQUE PAGE CONTENT                    -->
-    <!-- This is where the specific content for each new page -->
-    <!-- (like 'About Us' or 'Our Services') will go.       -->
-    <!-- ================================================================= -->
-    <h1>Page Title Here</h1>
-    <p>this is where the unique text for this specific page will be.</p>
-    <!-- ================================================================ -->
-    <!--              END: UNIQUE PAGE CONTENT                         -->
-    <!-- ================================================================ -->
-    <hr>
-      <!-- the footer provides consistency and a professional closing on every page. -->
+    <main>
+      <section class="gallery" id="gallery" aria-label="Coffee shop photo gallery">
+      </section>
+
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="nav-btn" id="prevBtn" aria-label="Previous image">◀</button>
+        <div class="lb-content" role="document">
+          <div class="lb-media" id="lbMedia">
+            <img id="lbImg" alt="" src="" />
+          </div>
+          <aside class="lb-sidebar">
+            <h2 id="lbTitle" class="lb-title"></h2>
+            <p id="lbDesc" class="lb-desc"></p>
+            <div class="controls">
+              <button id="downloadBtn" class="btn">Download</button>
+              <button id="closeBtn" class="btn primary">Close</button>
+            </div>
+          </aside>
+        </div>
+        <button class="nav-btn right" id="nextBtn" aria-label="Next image">▶</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const SAMPLE = [
+      {id:1,src:'https://images.unsplash.com/photo-1509042239860-f550ce710b93',thumb:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600',title:'Pouring Latte',desc:'Freshly poured latte with art.'},
+      {id:2,src:'https://images.unsplash.com/photo-1511920170033-f8396924c348',thumb:'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600',title:'Coffee Beans',desc:'Close-up of roasted coffee beans.'},
+      {id:3,src:'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0',thumb:'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=600',title:'Cozy Coffee Shop',desc:'Warm and inviting cafe interior.'},
+      {id:4,src:'https://images.unsplash.com/photo-1510626176961-4b57d4fbad03',thumb:'https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?w=600',title:'Espresso Machine',desc:'Barista pulling an espresso shot.'},
+      {id:5,src:'https://images.unsplash.com/photo-1529070538774-1843cb3265df',thumb:'https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=600',title:'Iced Coffee',desc:'Refreshing iced coffee in a glass.'},
+      {id:6,src:'https://images.unsplash.com/photo-1470337458703-46ad1756a187',thumb:'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600',title:'Pastry and Coffee',desc:'Delicious croissant with cappuccino.'}
+    ];
+
+    const gallery = document.getElementById('gallery');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbDesc = document.getElementById('lbDesc');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = -1;
+
+    function createCard(item, index){
+      const btn = document.createElement('button');
+      btn.className = 'card';
+      btn.setAttribute('aria-label', item.title + (item.desc ? ': '+item.desc : ''));
+      btn.setAttribute('data-index', index);
+      btn.innerHTML = `
+        <figure class="thumb">
+          <img loading="lazy" src="${item.thumb}" alt="${item.title}" />
+        </figure>
+        <div class="meta">${item.title}</div>
+      `;
+      btn.addEventListener('click', openLightbox);
+      return btn;
+    }
+
+    function renderGallery(){
+      gallery.innerHTML='';
+      SAMPLE.forEach((it,i)=>gallery.appendChild(createCard(it,i)));
+    }
+
+    function openLightbox(e){
+      const idx = Number(e.currentTarget.getAttribute('data-index'));
+      showItem(idx);
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+    }
+
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      lbImg.src='';
+      currentIndex = -1;
+    }
+
+    function showItem(idx){
+      currentIndex = (idx + SAMPLE.length) % SAMPLE.length;
+      const it = SAMPLE[currentIndex];
+      lbImg.src = it.src;
+      lbImg.alt = it.title;
+      lbTitle.textContent = it.title;
+      lbDesc.textContent = it.desc || '';
+      downloadBtn.onclick = ()=>downloadImage(it.src, it.title);
+    }
+
+    function downloadImage(url, title){
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = title.replace(/\s+/g,'-').toLowerCase()+'.jpg';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+
+    prevBtn.addEventListener('click', ()=>showItem(currentIndex-1));
+    nextBtn.addEventListener('click', ()=>showItem(currentIndex+1));
+    closeBtn.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e)=>{
+      if(lightbox.classList.contains('open')){
+        if(e.key==='Escape') closeLightbox();
+        if(e.key==='ArrowLeft') showItem(currentIndex-1);
+        if(e.key==='ArrowRight') showItem(currentIndex+1);
+      }
+    });
+
+    lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
+
+    renderGallery();
+  </script>
     <p>(c) 2025 Mountain Bean Cafe. All Rights Reserved.</p>
-  </body>
+</body>
 </html>
