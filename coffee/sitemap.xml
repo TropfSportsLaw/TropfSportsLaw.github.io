@@ -1,41 +1,26 @@
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBCEHEVVYQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+insert google stuff
 
-  gtag('config', 'G-DBCEHEVVYQ');
-</script>  
-  <meta charset="UTF-8">
-  <title>Tropf's Sports INC - sitemap</title>
-  <meta name="google-site-verification" content="W-jmDrLbc3QpAlS_Sy-qeprsU8ecPq88vRTvJOywbUw"/>  
+  
 </head>
-<?sml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!--  Homepage  -->
   <url>
-    <loc>https://tropfsportslaw.github.io/index.html</loc>
+    <loc>https://tropfsportslaw.github.io/coffee/index.html</loc>
   </url>
   <!-- About Us Page -->
   <url>
-    <loc>https://tropfsportslaw.github.io/pages/about.html</loc>
+    <loc>https://tropfsportslaw.github.io/coffee/about.html</loc>
   </url>
   <!-- Our Services Page -->
   <url>
-    <loc>https://tropfsportslaw.github.io/pages/services.html</loc>
+    <loc>https://tropfsportslaw.github.io/coffee/subscription.html</loc>
   </url>
   <!-- Our Prices Page -->
   <url>
-    <loc>https://tropfsportslaw.github.io/pages/pricing.html</loc>
+    <loc>https://tropfsportslaw.github.io/coffee/gallery.html</loc>
   </url>
   <!-- Contact Us Page -->
   <url>
-    <loc>https://tropfsportslaw.github.io/pages/contact.html</url>
-  </url>
-<!-- Marketing Folder -->
-  <url>
-    <loc>https://tropfsportslaw.github.io/marketing/</url>
+    <loc>https://tropfsportslaw.github.io/coffee/contact.html</url>
   </url>
 </urlset>
