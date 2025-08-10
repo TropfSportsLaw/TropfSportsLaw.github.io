@@ -4,92 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Willow & Steam Coffee House</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #f8f5f2;
-      color: #333;
-    }
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: url('coffee-shop-hero.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: rgba(0,0,0,0.5);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      padding: 0 20px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-    /* Button Styling */
-    .btn-primary {
-      background-color: #c49a6c;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.3s ease;
-    }
-    .btn-primary:hover {
-      background-color: #a97f54;
-    }
-    /* Map Section */
-    .map-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-    .map-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    /* Layout */
-    .section {
-      padding: 50px 20px;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="overlay"></div>
     <div class="hero-content">
       <h1>Welcome to the Mountain Bean Cafe</h1>
       <p>Step inside and savor the aroma of freshly roasted beans, the gentle hum of conversation, and the cozy charm that makes our coffee shop a home away from home. At the Mountain Bean Cafe, every cup is brewed with care-whether it's your morning pick-me-up, an afternoon escape, or a moment to share with friends. Pair your drink with our handcrafted pastries, locally sourced ingredients, and a seat by the window where the world shlows down just enough to enjoy it.</p>
@@ -100,7 +20,7 @@
   <!-- Map & Contact Section -->
   <section id="contact" class="section">
     <h2>Find Us</h2>
-    <p>123 Bean Street, Denver, Co, USA</p>
+    <p>123 Bean Street, Denver, Co, 80123, USA</p>
     <div class="map-container">
       <iframe
         src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_CODE"
@@ -111,7 +31,7 @@
     <br>
     <a href="mailto:info@mountainbeancafe.com" class="btn-primary">
       Email Us
-    </a>
+      
      <p>Come in, take a sip, and stay awhile-you belong here!</p>
       <button>View Our Menu</button>
   </section>
